@@ -1,0 +1,19 @@
+/* pokemon-detail.css */
+.pokemon-detail-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pokemon-image-container {
+    text-align: center;
+    margin-right: 20px;
+  }
+  
+  .pokemon-image-large {
+    max-height: 300px;
+  }
+  
+  .pokemon-description {
+    max-width: 400px;
+  }
+  

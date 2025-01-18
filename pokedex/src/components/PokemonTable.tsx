@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './grid.css';
+import './PokemonDetail';
 
 type Pokemon = {
   name: string;
   url: string;
   id: number;
 };
+
 
 type PokemonTableProps = {
   onSelectPokemon: (pokemon: Pokemon) => void;
@@ -20,8 +22,8 @@ const PokemonTable: React.FC<PokemonTableProps> = ({ onSelectPokemon }) => {
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
-        const offset = (currentPage - 1) * 36;
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=36`);
+        const offset = (currentPage - 1) * 16; // Change to 16 per page for a 4x4 grid
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=16`);
         const data = await response.json();
 
         // Add IDs to the Pokémon data
@@ -31,7 +33,7 @@ const PokemonTable: React.FC<PokemonTableProps> = ({ onSelectPokemon }) => {
         });
 
         setPokemonList(updatedData);
-        setTotalPages(Math.ceil(151 / 36));
+        setTotalPages(Math.ceil(151 / 16)); // Adjust totalPages for 16 per page
       } catch (error) {
         console.error('Error fetching Pokémon data:', error);
       }

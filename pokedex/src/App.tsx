@@ -14,7 +14,6 @@ type Pokemon = {
 const App: React.FC = () => {
   const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [suggestions, setSuggestions] = useState<string[]>([]);
 
   const handleSearch = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -40,7 +39,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Header onSearch={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} suggestions={suggestions} setSuggestions={setSuggestions} />
+      <Header onSearch={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       {selectedPokemon ? (
         <PokemonDetail pokemon={selectedPokemon} onBack={handleBackButtonClick} />
       ) : (
