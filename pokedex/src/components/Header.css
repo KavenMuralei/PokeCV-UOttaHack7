@@ -1,0 +1,28 @@
+/* header.css */
+.search-button {
+    background-color: red;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-button:hover {
+    background-color: darkred;
+  }
+  
+  .search-button .bi {
+    font-size: 1.2rem;
+    color: white;
+  }
+  /* header.css */
+.list-group.position-absolute {
+    z-index: 1000;
+  }
+  
+  .list-group-item:hover {
+    cursor: pointer;
+    background-color: #f8f9fa;
+  }
+  
+  
